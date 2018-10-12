@@ -1,5 +1,5 @@
 /**
-* vue-navigation v1.1.4
+* vue-navigation v1.1.5
 * https://github.com/zack24q/vue-navigation
 * Released under the MIT License.
 */
@@ -45,33 +45,11 @@ function isObjEqual(obj1, obj2) {
     if (keys1.length !== keys2.length) {
       return false;
     }
-    var _iteratorNormalCompletion = true;
-    var _didIteratorError = false;
-    var _iteratorError = undefined;
-
-    try {
-      for (var _iterator = keys1[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-        var key = _step.value;
-
-        if (obj1[key] !== obj2[key]) {
-          return false;
-        }
-      }
-    } catch (err) {
-      _didIteratorError = true;
-      _iteratorError = err;
-    } finally {
-      try {
-        if (!_iteratorNormalCompletion && _iterator.return) {
-          _iterator.return();
-        }
-      } finally {
-        if (_didIteratorError) {
-          throw _iteratorError;
-        }
+    for (var i = 0; i < keys1.length; i++) {
+      if (obj1[keys1[i]] !== obj2[keys1[i]]) {
+        return false;
       }
     }
-
     return true;
   }
 }

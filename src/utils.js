@@ -33,8 +33,8 @@ export function isObjEqual(obj1, obj2) {
     if (keys1.length !== keys2.length) {
       return false
     }
-    for (const key of keys1) {
-      if (obj1[key] !== obj2[key]) {
+    for (let i = 0; i < keys1.length; i++) {
+      if (obj1[keys1[i]] !== obj2[keys1[i]]) {
         return false
       }
     }
